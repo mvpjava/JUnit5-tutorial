@@ -14,7 +14,6 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.expectThrows;
 import static org.junit.jupiter.api.Assumptions.assumingThat;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -77,7 +76,7 @@ class ElectricalOutletTest {
     void shouldThrowExceptionWhenNoImplProvided() {
         ElectricalOutlet outletWithoutElectricityProvider = new ElectricalOutlet(null);
 
-        IllegalStateException exception = expectThrows(IllegalStateException.class, () -> outletWithoutElectricityProvider.getElectricity());
+        IllegalStateException exception = assertThrows(IllegalStateException.class, () -> outletWithoutElectricityProvider.getElectricity());
         assertAll(
                 "Analyzing Exception properties",
                 () -> assertEquals(IllegalStateException.class, exception.getClass()),

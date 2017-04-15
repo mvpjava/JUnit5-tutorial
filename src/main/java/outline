@@ -1,0 +1,6 @@
+JUnit 5 Introduction (Milestone 1)
+==================================
+- High level architecture overview
+- How to run tests until native IDE support available
+    - Mixing Junit 4 and 5 tests
+    - Junit 5 examples
